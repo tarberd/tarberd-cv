@@ -117,6 +117,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \def\afteremptysubsectionheaderspace{2.75pt}
   \def\subsectionmargin{9pt}
   \def\aftersubsectionspace{2.1pt}
+  \def\aftersubsectionspacexp{18pt}
 }{
   \def\namespaceskip{0.4em}
   \def\afterheaderspace{3pt}
@@ -133,7 +134,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \fi
 
   \def\afterdoublelinesubsectionheaderspace{-10pt}
-  \def\aftermultilinesubsectionheaderspace{-6pt}
+  \def\aftermultilinesubsectionheaderspace{-3pt}
   \def\afteremptysubsectionheaderspace{3pt}
   \def\subsectionmargin{9pt}
   \def\aftersubsectionspace{4pt}
@@ -243,5 +244,36 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 {
   \end{adjustwidth}
   \vspace*{\aftersubsectionspace}
+}
+\makeatother
+
+% Print a subsection
+\makeatletter
+% Define toggles checking if titles were defined
+\newenvironment{cvsubsectionxp}[4][1]{
+  \notblank{#2}{\toggletrue{lefttitledefined}}{}
+  \notblank{#3}{\toggletrue{centertitledefined}}{}
+  \notblank{#4}{\toggletrue{righttitledefined}}{}
+  \ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
+    \begin{tabu} to 1\textwidth { X[l,p] X[1.3 c,p] X[r,p] }
+      \textbf{#2} & \textbf{#3} & \textbf{#4} \\
+    \end{tabu}
+    % Add space according to the specidied number of lines
+    \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
+      \ifnumcomp{#1}{=}{2}{\vspace*{\afterdoublelinesubsectionheaderspace}}{
+        \vspace*{\aftermultilinesubsectionheaderspace}
+      }
+    }
+  }{
+    \vspace*{\afteremptysubsectionheaderspace}
+  }
+  \togglefalse{lefttitledefined}
+  \togglefalse{centertitledefined}
+  \togglefalse{righttitledefined}
+  \begin{adjustwidth}{\subsectionmargin}{\subsectionmargin}
+}
+{
+  \end{adjustwidth}
+  \vspace*{\aftersubsectionspacexp}
 }
 \makeatother
