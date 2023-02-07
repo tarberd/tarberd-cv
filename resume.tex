@@ -26,6 +26,7 @@
 % For mathematical symbols
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{multicol}
 
 % Set applicant's personal data for header
 \name{Bernardo Ferrari}
@@ -49,52 +50,46 @@
 
 	% Print the content
 	\begin{cvsection}{Employment}
-		\begin{cvsubsection}{Software Engineer}{Cadence Design Systems}{2022 - Present}
+		\begin{cvsubsection}{Software Engineer}{Cadence Design Systems}{May 2022 -- Present}
 			Worked as part of the System-Level Verification IP team to enable PCIe SoC verification.
 			\begin{itemize}
-				\item Used modern \textbf{C++} to develop a simulator for the verification of the PCIe specification.
+				\item Developed a simulator for the verification of the PCIe specification using modern \textbf{C++}.
 				\item Developed \textbf{Python} \textbf{DevOps} applications to enable easier software development.
 				\item Implemented learning practices on \textbf{TDD} and \textbf{C++} through coding dojos.
-				\item Worked remotely in a distributed team with team members located in Brazil, India, and USA\@.
-			\end{itemize}
-			Skills: C++; C;
-		\end{cvsubsection}
-
-		\begin{cvsubsection}{Lead Student Ambassador}{Microsoft Corporation}{Fall 2003 -- Spring 2005}
-			\begin{itemize}
-				\item Promoted to Lead Student Ambassador in Fall 2004; supervised 10 -- 15 Student Ambassadors.
-				\item Created and taught Computer Science course, CSE 099: Software Design and Development.
+				\item Experience with remote work in a globally distributed team.
 			\end{itemize}
 		\end{cvsubsection}
 
-		\begin{cvsubsection}{Head Teaching Assistant}{University of Pennsylvania}{Fall 2001 -- Spring 2005}
+		\begin{cvsubsection}{Compiler Researcher}{LASIGE}{Sep 2020 -- Present}
+			Worked as part of the Software Quality research team with focus on programming languages.
 			\begin{itemize}
-				\item Courses: Advanced Java III, Software Engineering, Mathematical Foundations of Computer Science I \& II.
-				\item Promoted to Head TA in Fall 2004; led weekly meetings and supervised four other TAs.
+				\item Designed a programming language formal \textbf{Type System} with \textbf{refinement types} called Ekitai.
+				\item Developed an incremental \textbf{LLVM} front-end for Ekitai supporting the \textbf{C ABI} using \textbf{Rust}.
+				\item Experience with remote work in a globally distributed team.
 			\end{itemize}
 		\end{cvsubsection}
 
-		\begin{cvsubsection}{Software Design Engineer, Intern}{Microsoft Corporation}{Summers 2001 -- 2003}
-			Visual Studio Core (Summer 2003)
+		\begin{cvsubsection}{Undergrad. Teaching Assistant}{Federal University of Santa Catarina}{Jul 2019 -- Dec 2020}
 			\begin{itemize}
-				\item Implemented a user interface for the VS open file switcher (ctrl-tab) and extended it to tool windows.
-				\item Created service to provide gradient across VS and VS add-ins. Optimized service via caching.
-			\end{itemize}
-			Programmer Productivity Research Center (Summers 2001, 2002)
-			\begin{itemize}
-				\item Built app to compute similarity of all methods in a code base; reduced time from $O(n^2)$ to $O(n\ log\ n)$.
-				\item Created test case generation tool which creates random XML docs from XML Schema.
+				\item Courses: Compiler Construction; Formal Languages and Compilers; Computer Science Theory.
 			\end{itemize}
 		\end{cvsubsection}
-	\end{cvsection}
 
-	\begin{cvsection}{Education}
-		\begin{cvsubsection}{Philadelphia, PA}{University of Pennsylvania}{Fall 2000 -- May 2005}
+		\begin{cvsubsection}{EDA Researcher}{Embedded Computing Laboratory}{Jun 2016 -- Dec 2020}
+			Worked as part of the EDA research team to build a modern \textbf{C++} library to enable EDA research and teaching.
 			\begin{itemize}
-				\item M.S.E. in Computer and Information Science, May 2005. GPA: 3.6
-				\item B.S.E. in Computer Science Engineering with Minor in Mathematics, May 2005.  In-major GPA: 3.4.
-				\item Graduate Coursework: Software Foundations; Computer Architecture; Algorithms; Artificial Intelligence; Comparison of Learning Algorithms; Computational Theory.
-				\item Undergraduate Coursework: Operating Systems; Databases; Algorithms; Programming Languages; Comp. Architecture; Engineering Entrepreneurship; Calculus III.
+				\item Developed cache-aware data structures and algorithms modern \textbf{C++} library for building EDA physical design applications. Developed parallel algorithms using \textbf{OpenMP}, \textbf{pThread} and \textbf{Boost}.
+				\item Acted as Lead Software Engineer guiding the team in technical decisions regarding modern \textbf{C++} library Architecture and enforcing agile practices such as \textbf{TDD}, \textbf{Code Review}, \textbf{CI/CD}, and \textbf{KanBan}.
+				\item Acted as Lead \textbf{DevOps} engineer developing the library build system in modern \textbf{CMake} and \textbf{Python}. Developed \textbf{CI/CD} pipelines for testing and distributing multiple \textbf{Linux} binary packages (e.g. rpm, deb, pacman, yocto).
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{CS Extension Program}{University of Santa Catarina}{Jul 2013 -- May 2014}
+			Worked as part of the CS extension program group acting as \textbf{System Administrator}.
+			\begin{itemize}
+				\item Administrated the extension program \textbf{Linux} infrastructure and servers (e.g. \textbf{Linux Repositories}, \textbf{Web Services}, \textbf{SQL}, \textbf{Ldap}, \textbf{ArchLinux}, \textbf{Gentoo})
+				\item Organized the Computer Science Week, a per semester event where multiple local companies would give talks and mini-courses to Undergraduate students.
+				\item Aided Professors on teaching and research extension programs.
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
@@ -102,21 +97,49 @@
 	\begin{cvsection}{Technical Experience}
 		\begin{cvsubsection}{Projects}{}{}
 			\begin{itemize}
-				\item \textbf{Multi-User Drawing Tool} (2004). Electronic classroom where multiple users can view and simultaneously draw on a “chalkboard” with each person’s edits synchronized.  C++, MFC
-				\item \textbf{Synchronized Calendar} (2003 – 2004). Desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users.  C\#.NET, SQL, XML
-				\item \textbf{Operating System} (2002).  UNIX-style OS with scheduler, file system, text editor and calculator. C
+				\item \textbf{Ekitai} (2020 -- 2023). A programming language with refinement types using the \textbf{LLVM} ecosystem written in \textbf{Rust}.
+
+				Project page: \url{https://github.com/tarberd/ekitai}
+
+				\item \textbf{TongOS} (2003 -- 2004). A \textbf{Risc-V} multi-task multi-core Operational System written in \textbf{Rust}.
+
+				Project page: \url{https://github.com/tong-os/tongOS}
+
+				\item \textbf{Ophidian} (2016 -- 2019). A set of \textbf{Open-Source} high-performance \textbf{C++} libraries to assist the \textbf{Physical Design} step of \textbf{EDA} research and teaching.
+
+				Project page: \url{https://gitlab.com/eclufsc/ophidian}.
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
 
-	\begin{cvsection}{Additional Experience and Awards}
-		\begin{cvsubsection}{}{}{}
-			\begin{itemize}
-				\item \textbf{Instructor (2003 – 2005):} Taught two full-credit Computer Science courses; average ratings of 4.8 out of 5.0.
-				\item \textbf{Third Prize, Senior Design Projects:} Awarded 3rd prize for Synchronized Calendar project, out of 100 projects.
-			\end{itemize}
-		\end{cvsubsection}
+	\newpage
+	\begin{cvsection}{Education}
+		\begin{cvsubsection}{Florianópolis, SC, Brazil}{Federal University of Santa Catarina}{2013 -- 2023}
+			B.Sc.\ in Computing Science, GPA\@: 7.14/10.
+			\begin{multicols}{2}
+				\begin{itemize}
+						\item Compiler Construction: 9.0/10
+						\item Operational Systems II\@: 9.0/10
+						\item Formal Languages and Compilers: 8.0/10
+						\item Security: 8.0/10
+						\item Data Structures: 8.0/10
+						\item Computer Organization and Design: 7.5/10
+				\end{itemize}
+		  \end{multicols}
+  	\end{cvsubsection}
+		\begin{cvsubsection}{Cork, Ireland}{University College Cork}{2015 -- 2016}
+			B.Sc.\ Exchange Program.
+  	\end{cvsubsection}
 	\end{cvsection}
+
+	% \begin{cvsection}{Additional Experience and Awards}
+	% 	\begin{cvsubsection}{}{}{}
+	% 		\begin{itemize}
+	% 			\item \textbf{Instructor (2003 – 2005):} Taught two full-credit Computer Science courses; average ratings of 4.8 out of 5.0.
+	% 			\item \textbf{Third Prize, Senior Design Projects:} Awarded 3rd prize for Synchronized Calendar project, out of 100 projects.
+	% 		\end{itemize}
+	% 	\end{cvsubsection}
+	% \end{cvsection}
 
 	\begin{cvsection}{Languages and Technologies}
 		\begin{cvsubsection}{}{}{}
@@ -127,4 +150,12 @@
 		\end{cvsubsection}
 	\end{cvsection}
 
+	\begin{cvsection}{Natural Languages}
+		\begin{cvsubsection}{}{}{}
+			\begin{itemize}
+					\item Portuguese (native)
+					\item English (fluent)
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
 \end{document}
